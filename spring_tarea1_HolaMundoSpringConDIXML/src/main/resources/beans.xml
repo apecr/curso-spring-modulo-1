@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans	
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+    <bean id="renderer" 
+          class="com.bolsadeideas.ejemplos.ImprimeMensajeImpl">
+        <property name="proveedorMensaje" 
+                  ref="proveedorMensaje"/>
+    </bean>
+    
+    <bean id="proveedorMensaje" 
+          class="com.bolsadeideas.ejemplos.HolaMundoProveedorMensaje">
+          <property name="proveedorSaludo" 
+                  ref="proveedorSaludo"/>
+          </bean>
+          
+    <bean id="proveedorSaludo" 
+          class="com.bolsadeideas.ejemplos.PropioProveedorSaludo">
+          <property name="saludo" 
+                  value="Buenos días, Spring!"/>
+          </bean>
+</beans>
